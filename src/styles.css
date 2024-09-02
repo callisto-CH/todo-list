@@ -141,6 +141,7 @@ button img {
 	display: grid;
 	grid-auto-rows: 1rem;
 	gap: 2.5rem;
+	justify-content: center;
 }
 
 button.new-todo {
@@ -149,12 +150,13 @@ button.new-todo {
 
 .todo {
 	height: min-content;
+	width: min-content;
 
 	display: grid;
-	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 2rem 40ch 12ch 12ch 3rem 3rem;
+	grid-template-rows: 2rem 1fr;
+	grid-template-columns: 2rem 40ch 12ch 12ch 4rem 4rem;
 	column-gap: 3rem;
-	row-gap: 0.5rem;
+	row-gap: 1rem;
 
 	-webkit-box-shadow: 0px 2px 0px 0px rgba(148,148,148,1);
 	-moz-box-shadow: 0px 2px 0px 0px rgba(148,148,148,1);
@@ -194,4 +196,16 @@ button.new-todo {
 
 .todo-desc {
 	grid-column: 1 / 7;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+
+	cursor: default;
+}
+
+.todo-desc:hover {
+	text-wrap: wrap;
+	overflow: visible;
 }
