@@ -8,6 +8,8 @@ Break down problems into smaller problems, and those problems into smaller ones.
 
 Also, by taking a user-centric approach to my problem-solving, I learned the value of keeping track of what the user is currently doing. In this project, the state module records the list that the user is currently working in, as well as what todo they are currently editing. This makes internally altering and recording data simple.
 
+Oh yes......... and I really need to get used to committing at each step of the way!!!
+
 There is definitely room for improvement, I feel, in my application of the SOLID principles that the Odin Project covered... and this is definitely a project I want to revisit in the future to clean up. But I will let my first version of it remain.
 
 If you find any bugs though please let me know. Just don't go messing around with localStorage in the console and expecting everything to be fine.
