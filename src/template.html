@@ -16,79 +16,63 @@
 				</button>
 			</div>
 			<ul class="lists">
-
-			<!-- MOCKUP CODE BEGINS -->
-				<li>
-					<div class="li-content">
-						<span class="list-name">Name of list</span>
-						<button class="delete-list">Delete list</button>
-					</div>
-				</li>
-
-				<li>
-					<div class="li-content">
-						<span class="list-name">Name of list 2</span>
-						<button class="delete-list">Delete list</button>
-					</div>
-				</li>
-
-				<li>
-					<div class="li-content">
-						<span class="list-name">Name of list 3</span>
-						<button class="delete-list">Delete list</button>
-					</div>
-				</li>
-
-
-
-			<!-- MOCKUP CODE ENDS -->
-
+			
 			</ul>
 		</div>
 	</div>
 	<div class="active-list-section">
 		<div class="active-list-header">
-				<span class="active-list-name">
-
-
-					<!-- MOCKUP CODE BEGINS -->
-					Active List
-					<!-- MOCKUP CODE ENDS -->
-					 
-				</span>
+				<span class="active-list-name"></span>
 		</div>
 
 		<div class="active-list-content">
-
 			<button class="new-todo">
 				<img src="images/plus-box.svg" alt="plus icon" title="Plus icon by Google on Pictogrammers">
 				<div class="new-todo-button-text">New Todo Item</div>
 			</button>
-			
-			<!-- MOCKUP CODE BEGINS -->
-
-			<div class="todo">
-				<input type="checkbox" />
-				<div class="todo-name">
-					<span class="name">Todo Name</span>
-				</div>
-				<div class="todo-priority">Priority: 
-					<span class="priority">High</span>
-				</div>
-				<div class="todo-due-date">Due date: 
-					<span class="date">8/31/2024</span>
-				</div>
-				<button class="todo-edit">Edit</button>
-				<button class="todo-delete">Delete</button>
-				<div class="todo-desc">
-					Description: This todo item will require multiple steps to complete. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste neque fuga earum? Distinctio, deserunt praesentium nostrum reprehenderit laborum molestiae, et temporibus tempora earum aliquam sapiente amet eaque sed quaerat accusantium?
-				</div>
-			</div>
-
-			<!-- MOCKUP CODE ENDS -->
-
-
 		</div>
 	</div>
+	<dialog class="new-list-modal">
+		<form action="#" method="post">
+			<label for="listname">Name of list:</label>
+			<input type="text" id="listname">
+			<input type="submit" class="submit-new-list"></input>
+			<button type="button" class="cancel">Cancel</button>
+		</form>
+	</dialog>
+	<dialog class="todo-modal">
+		<form action="#" method="post" id="todoform">
+			<div class="todo-modal-complete">
+				<label for="todocomplete">Complete:</label>
+				<input type="checkbox" id="todocomplete">
+			</div>
+			<div class="todo-modal-name">
+				<label for="todoname">Name of todo:</label>
+				<input type="text" id="todoname">
+			</div>
+			<div class="todo-modal-priority">
+				<label for="todoprio">Priority:</label>
+				<select id="todoprio">
+					<option value="None">None</option>
+					<option value="High">High</option>
+					<option value="Medium">Medium</option>
+					<option value="Low">Low</option>
+				</select>
+			</div>
+			<div class="todo-modal-due-date">
+				<label for="tododate">Due date:</label>
+				<input type="date" id="tododate">
+			</div>
+			<div class="todo-modal-desc">
+				<label for="tododesc">Description:</label>
+				<textarea type="text" id="tododesc"></textarea>
+			</div>
+			<div class="todo-modal-buttons">
+				<input type="submit">
+				<button type="button" class="cancel">Cancel</button>
+			</div>
+			<input type="hidden" class="type" id="new">
+		</form>
+	</dialog>
 </body>
 </html>

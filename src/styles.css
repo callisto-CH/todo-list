@@ -80,17 +80,6 @@ button img {
 	font-size: 1.5rem;
 }
 
-.active-list-section {
-	display: grid;
-	grid-template-rows: 10% 1fr;
-
-	min-width: 80%;
-}
-
-.active-list-header {
-	background-color: rgb(245, 245, 245);
-}
-
 .lists {
 	padding-top: 1rem;
 	padding-left: 2rem;
@@ -120,9 +109,30 @@ button img {
 .li-content button {
 	width: min-content;
 	text-wrap: nowrap;
+	padding: 0.15rem;
+}
+
+.list-name {
+	display: inline-block;
+	max-width: 18ch;
+	overflow-wrap: break-word;
+}
+
+.list-name:hover {
+	color: grey;
+	cursor: pointer;
+}
+
+.active-list-section {
+	display: grid;
+	grid-template-rows: 10% 1fr;
+
+	min-width: 80%;
 }
 
 .active-list-header {
+	background-color: rgb(245, 245, 245);
+
 	display: grid;
 	place-items: center;
 }
@@ -138,13 +148,14 @@ button img {
 .active-list-content {
 	padding: 2rem 2rem 0 2rem;
 
-	display: grid;
-	grid-auto-rows: 1rem;
-	gap: 2.5rem;
-	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
 }
 
 button.new-todo {
+	display: none;
 	place-self: center;
 }
 
@@ -176,12 +187,26 @@ button.new-todo {
 }
 
 .name {
+	max-width: 40ch;
+	overflow-wrap: break-word;
 	font-weight: 800;
 }
 
 .todo-priority,
 .todo-due-date {
 	width: 12ch;
+}
+
+.todo-priority.high {
+	color: rgb(235, 28, 28);
+}
+
+.todo-priority.medium {
+	color: rgb(231, 228, 20);
+}
+
+.todo-priority.low {
+	color: rgb(30, 238, 64);
 }
 
 .todo-info,
@@ -208,4 +233,102 @@ button.new-todo {
 .todo-desc:hover {
 	text-wrap: wrap;
 	overflow: visible;
+}
+
+dialog:not([open]) {
+	display: none;
+}
+
+dialog {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+
+	padding: 1rem;
+}
+
+.new-list-modal form {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 5rem 5rem 1fr;
+	gap: 0.5rem;
+	place-items: center;
+}
+
+.new-list-modal label {
+	grid-area: 1 / 2 / 2 / 4;
+	place-self: end center;
+}
+
+.new-list-modal input[type=text] {
+	grid-area: 2 / 1 / 3 / 5;
+}
+
+.new-list-modal button,
+.new-list-modal input[type=submit] {
+	width: 4rem;
+	height: 1.5rem;
+	place-self: center;
+}
+
+.new-list-modal .submit-new-list {
+	grid-area: 3 / 2 / 4 / 3;
+}
+
+.new-list-modal .cancel {
+	grid-area: 3 / 3 / 4 / 4;
+}
+
+.todo-modal {
+	padding: 1rem;
+}
+
+.todo-modal form {
+	display: grid;
+	grid-template-rows: 1fr 3fr 1fr;
+	grid-template-columns: 8rem repeat(3, 1fr);
+	gap: 1.5rem;
+}
+
+.todo-modal div {
+	display: flex;
+	flex-direction: column;
+}
+
+.todo-modal .todo-modal-complete {
+	flex-direction: row;
+	gap: 0.5rem;
+}
+
+.todo-modal-complete label {
+	display: flex;
+	align-items: center;
+}
+
+.todo-modal-desc {
+	grid-area: 2 / 1 / 3 / 5;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.todo-modal-desc textarea {
+	flex: 1;
+	resize: none;
+}
+
+.todo-modal .todo-modal-buttons {
+	grid-area: 3 / 4 / 4 / 5;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.todo-modal-buttons * {
+	height: min-content;
+	width: 5rem;
 }
